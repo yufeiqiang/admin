@@ -14,7 +14,6 @@ export const router= new VueRouter({
 const LOGIN_PAGE_NAME='login'
 router.beforeEach((to, from, next) => {
     iView.LoadingBar.start();
-    // console.log(!Cookies.get('isLogin'))
     if (Cookies.get('isLogin')==530 && to.name !== LOGIN_PAGE_NAME) { // 判断是否已经登录且前往的页面不是登录页
         alert('请登录啊')
         next({
